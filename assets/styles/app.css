@@ -57,3 +57,16 @@ div.liens{
     background-color: #ddd;
     color: black;
 }
+
+.formulaire {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 200%;
+    margin-left: 20px
+}
+input{
+    margin-left: 35px;
+}

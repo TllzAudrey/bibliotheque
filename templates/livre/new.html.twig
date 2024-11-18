@@ -4,8 +4,9 @@
 
 {% block body %}
     <h1>Create new Livre</h1>
+    <div class="formulaire">
+        {{ include('livre/_form.html.twig') }}
 
-    {{ include('livre/_form.html.twig') }}
-
-    <a href="{{ path('app_livre_index') }}">back to list</a>
+        <a href="{{ path('app_livre_index') }}">back to list</a>
+    </div>
 {% endblock %}
