@@ -1,0 +1,10 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    
+    {% if form.vars.data.photo %}
+        <img src="{{ asset('uploads/auteurs/photos/' ~ auteur.photo) }}" style="width:10%" />
+
+    {% endif %}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+
+{{ form_end(form) }}

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Livre index{% endblock %}
+
+{% block body %}
+    <div id="content">
+
+        <h1>Livre index</h1>
+        {% for livre in livres %}
+            <div class="gallery">
+                <div class="titre">
+                    {{ livre.titre }}
+                </div>
+                <div class="auteur">
+                    {% for auteur in livre.auteur %}
+                        {{ auteur.nom ~ " " ~ auteur.prenom }}
+                    {% endfor %}
+                </div>
+                <div class="liens">                
+                    <a class="liens" href="{{ path('app_livre_show', {'id': livre.id}) }}">show</a>
+                    <a class="liens" href="{{ path('app_livre_edit', {'id': livre.id}) }}">edit</a>
+                </div>
+            </div>
+
+        {% endfor %}
+
+
+        <a href="{{ path('app_livre_new') }}">Create new</a>
+    </div>
+{% endblock %}
