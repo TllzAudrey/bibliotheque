@@ -79,8 +79,28 @@ final class LivreController extends AbstractController{
         return $this->redirectToRoute('app_livre_index', [], Response::HTTP_SEE_OTHER);
     }
     #[Route('/emprunt/{id}', name: 'app_livre_emprunter',methods: ['GET', 'POST'])]
-    public function emprunter(#[CurrentUser] User $user){
-        $this->setEmprupt($user);
+    public function emprunter(Livre $livre, EntityManagerInterface $entityManager){
+        $user = $this->getUser();
+        $livre->setEmprupt($user);
+
+        $entityManager->flush();
+
+        return $this->render('livre/show.html.twig', [
+            'livre' => $livre,
+        ]);
+
+    }
+    #[Route('/rendu/{id}', name: 'app_livre_rendu',methods: ['GET', 'POST'])]
+    public function rendu(Livre $livre, EntityManagerInterface $entityManager){
+        $user = null;
+        $livre->setEmprupt($user);
+
+        $entityManager->flush();
+
+        return $this->render('livre/show.html.twig', [
+            'livre' => $livre,
+        ]);
+
     }
 
 

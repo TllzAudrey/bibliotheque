@@ -38,8 +38,14 @@
             <btn >
         </tbody>
     </table>
+    {% if livre.emprupt is not null %}
+        <a href="{{ path('app_livre_rendu', {'id': livre.id}) }}">Rendre</a>
+    {% else %}
+        <a href="{{ path('app_livre_emprunter', {'id': livre.id}) }}">Emprunt</a>
 
-    <a href="{{ path('app_livre_emprunter', {'id': livre.id}) }}">emprunt</a>
+    {% endif %}
+        
+    
 
     
     <a href="{{ path('app_livre_index') }}">back to list</a>
