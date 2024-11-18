@@ -23,6 +23,7 @@ class SecurityController extends AbstractController
             'last_username' => $lastUsername,
             'error' => $error,
         ]);
+        return $this->redirectToRoute('app_login');
     }
 
     #[Route(path: '/logout', name: 'app_logout')]

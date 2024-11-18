@@ -1,11 +1,15 @@
 {% extends 'base.html.twig' %}
+{# ... #}
 
-{% block title %}Livre index{% endblock %}
+
+{% block title %}Livre{% endblock %}
 
 {% block body %}
     <div id="content">
 
-        <h1>Livre index</h1>
+        <h1>Livre</h1>
+        <a href="{{ path('app_livre_new') }}">Create new</a>
+
         {% for livre in livres %}
             <div class="gallery">
                 <div class="titre">
@@ -25,7 +29,6 @@
         {% endfor %}
 
 
-        <a href="{{ path('app_livre_new') }}">Create new</a>
 
     </div>
 {% endblock %}
